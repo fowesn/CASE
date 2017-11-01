@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		* {
+			margin: .5rem;
+		}
+		body {
+			background-image: URL("cat.jpg");
+			background-position: center center;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		legend {
+			font-weight: bold;
+			color: white;
+		}
+		fieldset {
+			background-color: rgba(0,0,0,.5);
+		}
+		fieldset > fieldset {
+			background-color: rgba(255,255,255,0.1)
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script src="change.js"></script>
+</head>
+
+<body>
+	<form onsubmit="submitted()">
+		<fieldset>
+			<legend>Личные данные</legend>
+			Имя* <input type="textbox" id="name" style="width: 15em" autofocus required> <br>
+			Электронная почта* <input type="email" id="email" style="width: 15.15em" required> <br>
+			Домашняя страница* <input type="url" id="url" style="width: 15.15em" required> <br>
+			Дата рождения <input type="date" id="birth" style="width: 15.1em"> <br>
+			Номер телефона <input style="width: 15.1em" id="telephone" placeholder="8-999-999-99-99" pattern="8-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+		</fieldset>
+		
+		<fieldset>
+			<legend>Настройки</legend>
+			Цвет текста <input type="color" id="color" onchange="fontColor()"> <br>
+			Размер текста <input type="range" id="size" min="8" max="26" step="1" onchange="fontSize()">
+		</fieldset>
+		
+		<fieldset>
+			<legend>Несколько странных вопросов</legend>
+			
+			<input type="checkbox" onchange="hide('#music')"> Музыка <br>
+			
+			<fieldset id="music" hidden="true">
+				<input type="radio" name="music"> Инди <br>
+				<input type="radio" name="music"> Фолк
+			</fieldset>
+			
+			<input type="checkbox" onchange="hide('#book')"> Книги <br>
+			
+			<fieldset id="book" hidden="true">
+				<input type="radio" name="book"> Поэзия <br>
+				<input type="radio" name="book"> Проза
+			</fieldset>
+			
+		</fieldset>
+		<input type="submit" >
+	</form>
+</body>
+</html> 
