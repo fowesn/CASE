@@ -16,4 +16,14 @@ function hide(id) {
 
 function submitted() {
 	var name = document.getElementById("name").value; //это работает!
+	var mail = document.getElementById("email").value;
+	var link = document.getElementById("url").value;
+	var bd = document.getElementById("birth").value;
+	var tlph = document.getElementById("telephone").value;
+	alert("Имя: " + name + '\n' + 
+				"Почта " + mail + '\n' + 
+				"Сайт: " + link + '\n' + 
+				"Дата рождения: " + bd + '\n' + 
+				"Номер телефона: " + tlph + '\n' + 
+				"Вы любите: " )
 }
